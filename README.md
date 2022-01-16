@@ -1,0 +1,2 @@
+# picture-project
+Learning JavaScript
