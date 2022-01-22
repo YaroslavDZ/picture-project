@@ -4,6 +4,8 @@ const modals = () => {
               modal = document.querySelector(modalSelector),
               close = document.querySelectorAll(closeSelector),
               windows = document.querySelectorAll('[data-modal]'),
+              giftButton = document.querySelector('.fixed-gift'),
+              giftButtonRight = +getComputedStyle(giftButton).right.slice(0,-2),
               scroll = calcScroll();
 
         trigger.forEach(item => {
@@ -16,9 +18,12 @@ const modals = () => {
                     item.style.display = 'none';
                 });
 
+                giftButton.style.right = giftButtonRight + scroll + 'px';
+
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
                 document.body.style.marginRight = `${scroll}px`;
+
             });
         });
 
@@ -31,6 +36,9 @@ const modals = () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
                 document.body.style.marginRight = `0px`;
+
+                giftButton.style.right = giftButtonRight + 'px';
+                
             });
         });
 
@@ -75,6 +83,7 @@ const modals = () => {
             if (!display) {
                 document.querySelector(modalSelector).style.display = 'block';
                 document.body.style.overflow = 'hidden';
+                let scroll = calcScroll();
                 document.body.style.marginRight = `${scroll}px`;
             }
         }, time);
@@ -82,7 +91,7 @@ const modals = () => {
 
     bindModal('.button-design', '.popup-design', '.popup-close');
     bindModal('.button-consultation', '.popup-consultation', '.popup-close');
-    showModalByTime('.popup-consultation', 60000);
+    showModalByTime('.popup-consultation', 2000);
 };
 
 export default modals;
