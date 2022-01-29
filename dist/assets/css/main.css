@@ -65,6 +65,11 @@ h4 {
 .p-heading {
   font-size: 2.2rem;
 }
+
+.status {
+  text-align: center;
+}
+
 .button {
   border-radius: 50px;
   display: block;
@@ -546,6 +551,7 @@ h4 {
   margin-right: -2rem;
   text-align: justify;
 }
+
 .calc .file_upload {
   position: relative;
   overflow: hidden;
