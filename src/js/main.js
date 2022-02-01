@@ -6,6 +6,7 @@ import checkTextInputs from './modules/checkTextInputs.js';
 import showMoreStyles from './modules/showMoreStyles.js';
 import calc from './modules/calc.js';
 import filter from './modules/filter.js';
+import pictureSize from './modules/pictureSize.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
     showMoreStyles('.button-styles', '#styles .row');
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     filter();
+    pictureSize('.sizes-block');
 });
