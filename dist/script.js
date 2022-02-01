@@ -4209,6 +4209,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/filter.js */ "./src/js/modules/filter.js");
 /* harmony import */ var _modules_pictureSize_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/pictureSize.js */ "./src/js/modules/pictureSize.js");
 /* harmony import */ var _modules_accordion_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/accordion.js */ "./src/js/modules/accordion.js");
+/* harmony import */ var _modules_burger_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/burger.js */ "./src/js/modules/burger.js");
+
 
 
 
@@ -4234,6 +4236,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_filter_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_modules_pictureSize_js__WEBPACK_IMPORTED_MODULE_8__["default"])('.sizes-block');
   Object(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_9__["default"])('.accordion-heading');
+  Object(_modules_burger_js__WEBPACK_IMPORTED_MODULE_10__["default"])('.burger-menu', '.burger');
 });
 
 /***/ }),
@@ -4273,6 +4276,37 @@ var accordion = function accordion(triggerSelector) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (accordion);
+
+/***/ }),
+
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var burger = function burger(menuSelector, burgerSelector) {
+  var menuElem = document.querySelector(menuSelector),
+      burgerElem = document.querySelector(burgerSelector);
+  menuElem.style.display = 'none';
+  burgerElem.addEventListener('click', function () {
+    if (menuElem.style.display === 'none' && window.screen.availWidth < 993) {
+      menuElem.style.display = 'block';
+    } else {
+      menuElem.style.display = 'none';
+    }
+  });
+  window.addEventListener('resize', function () {
+    if (window.screen.availWidth > 992) {
+      menuElem.style.display = 'none';
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burger);
 
 /***/ }),
 
